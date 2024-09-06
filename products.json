@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "name": "Ring",
+      "price": 200,
+      "image": "images/p1.png",
+      "description": "A beautiful premium ring.",
+      "isNew": true
+    },
+    {
+      "id": 2,
+      "name": "Watch",
+      "price": 300,
+      "image": "images/p2.png",
+      "description": "A stylish premium watch.",
+      "isNew": true
+    },
+    {
+      "id": 3,
+      "name": "Teddy Bear",
+      "price": 110,
+      "image": "images/p3.png",
+      "description": "A soft and cuddly teddy bear.",
+      "isNew": true
+    },
+    {
+      "id": 4,
+      "name": "Flower Bouquet",
+      "price": 45,
+      "image": "images/p4.png",
+      "description": "A beautiful bouquet of flowers.",
+      "isNew": true
+    }
+  ]
+  
