@@ -131,7 +131,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 
             try {
                 // Make a POST request to the API
-                const response = await fetch('http://localhost:3000/send-email', {
+                const response = await fetch('https://email-service-green.vercel.app/send-email', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

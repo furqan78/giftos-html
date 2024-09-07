@@ -73,6 +73,18 @@
     h2 {
         font-size: 1.3rem;
     }
+
+    .navbar-brand span {
+        font-size: 1.2rem;
+    }
+
+    .slider_section .slider_container {
+        padding: 1.2rem 1rem;
+    }
+
+    .custom_nav-container {
+        padding: 0 1rem;
+    }
 }
 
 @media (max-width: 768px) {

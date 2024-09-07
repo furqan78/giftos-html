@@ -124,7 +124,7 @@ a:focus {
 }
 
 .navbar-brand span {
-  font-size: 1.2rem;
+  font-size: 28px;
   font-weight: bold;
   color: #000000;
   text-transform: uppercase;
@@ -139,7 +139,7 @@ a:focus {
 
 .custom_nav-container {
   /* z-index: 99999; */
-  padding: 0 1rem;
+  padding: 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -236,7 +236,7 @@ a:focus {
   color: #fefefe;
   background-color: #000000;
   background-color: #f89cab;
-  padding: 0.5rem 1rem;
+  padding: 25px;
   border-radius: 0 0 15px 15px;
 }
 
@@ -866,4 +866,8 @@ a:focus {
 
 .new-arrival-img {
   width: 75% !important;
+}
+
+.mobile-show {
+  display: none;
 }
