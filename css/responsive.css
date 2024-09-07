@@ -9,7 +9,6 @@
         justify-content: center;
         margin-left: 0;
         margin-top: 10px;
-
     }
 
     .custom_nav-container {
@@ -29,7 +28,7 @@
     }
 
     .slider_section .detail-box h1 {
-        font-size: 3rem;
+        font-size: 1.4rem;
     }
 
     .slider_section .img-box {
@@ -62,11 +61,23 @@
         width: 45px;
         height: 45px;
     }
+
+    .mobile-show {
+        display: block;
+    }
+
+    .mobile-hide {
+        display: none;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
 }
 
 @media (max-width: 768px) {
     .hero_area {
-        padding: 0 25px;
+        padding: 0px;
     }
 
     .slider_section .img-box {

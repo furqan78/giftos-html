@@ -5,8 +5,8 @@ function getYear() {
     document.querySelector("#displayYear").innerHTML = currentYear;
 }
 
- // Function to show product details in modal
- function showProductDetails(productId) {
+// Function to show product details in modal
+function showProductDetails(productId) {
     fetch('products.json')
         .then(response => response.json())
         .then(products => {
@@ -53,36 +53,111 @@ $('.owl-carousel').owlCarousel({
 })
 
 // Fetch and display products
-fetch('../products.json')
-.then(response => response.json())
-.then(products => {
-    const productList = document.getElementById('product-list');
+fetch('products.json')
+    .then(response => response.json())
+    .then(products => {
+        const productList = document.getElementById('product-list');
 
-    products.forEach(product => {
-        // Create product card
-        const productCard = document.createElement('div');
-        productCard.classList.add('col-sm-6', 'col-md-4', 'col-lg-3');
-        productCard.innerHTML = `
+        products.forEach(product => {
+            // Create product card
+            const productCard = document.createElement('div');
+            productCard.classList.add('col-sm-6', 'col-md-4', 'col-lg-3');
+            productCard.innerHTML = `
             <div class="box" data-product-id="${product.id}">
                 <div class="img-box">
                     <img src="${product.image}" alt="${product.name}">
                 </div>
                 <div class="detail-box">
                     <h6>${product.name}</h6>
-                    <h6>Price <span>$${product.price}</span></h6>
+                    <h6><span>₹${product.price}</span></h6>
                 </div>
                 ${product.isNew ? '<div class="new"><span>New</span></div>' : ''}
             </div>
         `;
-        productList.appendChild(productCard);
-    });
-
-    // Add click event listener to each product card
-    document.querySelectorAll('.box').forEach(box => {
-        box.addEventListener('click', () => {
-            const productId = box.dataset.productId;
-            showProductDetails(productId);
+            productList.appendChild(productCard);
         });
-    });
-})
-.catch(error => console.error('Error fetching product data:', error));
+
+        // Add click event listener to each product card
+        document.querySelectorAll('.box').forEach(box => {
+            box.addEventListener('click', () => {
+                const productId = box.dataset.productId;
+                showProductDetails(productId);
+            });
+        });
+    })
+    .catch(error => console.error('Error fetching product data:', error));
+
+document.getElementById('contact-form').addEventListener('submit', async function (event) {
+    event.preventDefault(); // Prevent the default form submission
+    const sendEmailButton = document.getElementById('send-email');
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+
+    switch (true) {
+        case !name:
+            alert("Please enter name");
+            break;
+        case name.length < 3:
+            alert("Name should contains at least 3 characters");
+            break;
+        case !email:
+            alert("please enter email");
+            break;
+        case !phone:
+            alert("Please enter phone no");
+            break;
+        case phone.length != 10:
+            alert("Please enter valid phone no");
+            break;
+        case !message:
+            alert("Please enter message");
+            break;
+        case message.length < 20:
+            alert("Message should contains at least 20 characters");
+            break;
+        default:
+            sendEmailButton.setAttribute('disabled', true); // Disable the button
+            sendEmailButton.innerText = "Loading...";
+            // Create a data object
+            const formData = {
+                name: name,
+                email: email,
+                phone: phone,
+                message: message,
+                appname: "Yoursstyle Hub"
+            };
+
+            try {
+                // Make a POST request to the API
+                const response = await fetch('http://localhost:3000/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                // Check if the request was successful
+                if (response.ok) {
+                    alert('Your message has been sent successfully!');
+                    // Optionally, reset the form
+                    document.getElementById('contact-form').reset();
+                    sendEmailButton.removeAttribute('disabled');
+                    sendEmailButton.innerText = "SEND";
+                } else {
+                    alert('There was a problem sending your message. Please try again.');
+                    sendEmailButton.removeAttribute('disabled');
+                    sendEmailButton.innerText = "SEND";
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('There was a problem sending your message. Please try again.');
+                sendEmailButton.removeAttribute('disabled');
+                sendEmailButton.innerText = "SEND";
+            }
+            break;
+
+    }
+});

@@ -1,35 +1,66 @@
 [
-    {
-      "id": 1,
-      "name": "Ring",
-      "price": 200,
-      "image": "images/p1.png",
-      "description": "A beautiful premium ring.",
-      "isNew": true
-    },
-    {
-      "id": 2,
-      "name": "Watch",
-      "price": 300,
-      "image": "images/p2.png",
-      "description": "A stylish premium watch.",
-      "isNew": true
-    },
-    {
-      "id": 3,
-      "name": "Teddy Bear",
-      "price": 110,
-      "image": "images/p3.png",
-      "description": "A soft and cuddly teddy bear.",
-      "isNew": true
-    },
-    {
-      "id": 4,
-      "name": "Flower Bouquet",
-      "price": 45,
-      "image": "images/p4.png",
-      "description": "A beautiful bouquet of flowers.",
-      "isNew": true
-    }
-  ]
-  
+  {
+    "id": 1,
+    "name": "Ring",
+    "price": 200,
+    "image": "images/p1.png",
+    "description": "A beautiful premium ring.",
+    "isNew": true
+  },
+  {
+    "id": 2,
+    "name": "Watch",
+    "price": 300,
+    "image": "images/p2.png",
+    "description": "A stylish premium watch.",
+    "isNew": true
+  },
+  {
+    "id": 3,
+    "name": "Teddy Bear",
+    "price": 110,
+    "image": "images/p3.png",
+    "description": "A soft and cuddly teddy bear.",
+    "isNew": true
+  },
+  {
+    "id": 4,
+    "name": "Flower Bouquet",
+    "price": 45,
+    "image": "images/p4.png",
+    "description": "A beautiful bouquet of flowers.",
+    "isNew": true
+  },
+  {
+    "id": 5,
+    "name": "Bracelate",
+    "price": 500,
+    "image": "images/kada.png",
+    "description": "A beautiful premium ring.",
+    "isNew": true
+  },
+  {
+    "id": 6,
+    "name": "Premium Watch",
+    "price": 1600,
+    "image": "images/hub-bolt-image-2.png",
+    "description": "A stylish premium watch.",
+    "isNew": false
+  },
+  {
+    "id": 7,
+    "name": "Luxury Purse",
+    "price": 2000,
+    "image": "images/purse.png",
+    "description": "A soft and cuddly teddy bear.",
+    "isNew": false
+  },
+  {
+    "id": 8,
+    "name": "Hublot Watch",
+    "price": 1000,
+    "image": "images/hub-bolt-watch.png",
+    "description": "A beautiful premium ring.",
+    "isNew": true
+  }
+]
